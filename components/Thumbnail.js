@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import { forwardRef } from "react";
 import { ThumbUpIcon } from "@heroicons/react/outline";
 
@@ -11,6 +10,8 @@ const Thumbnail = forwardRef(({ result }, ref) => {
       className="group p-2 transition-all duration-200 ease-in-out transform sm:hover:scale-125 hover:z-50"
     >
       <Image
+        priority
+        alt=""
         layout="responsive"
         src={`${BASE_URL}${result.backdrop_path || result.poster_path}`}
         width={1920}
@@ -32,5 +33,5 @@ const Thumbnail = forwardRef(({ result }, ref) => {
     </div>
   );
 });
-
+Thumbnail.displayName = "Thumbnail";
 export default Thumbnail;
