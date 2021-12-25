@@ -7,7 +7,7 @@ const Thumbnail = forwardRef(({ result }, ref) => {
   return (
     <div
       ref={ref}
-      className="group p-2 transition-all duration-200 ease-in-out transform sm:hover:scale-125 hover:z-50"
+      className="group p-2 transition-all duration-200 ease-in-out transform sm:hover:scale-110 hover:z-50"
     >
       <Image
         priority
