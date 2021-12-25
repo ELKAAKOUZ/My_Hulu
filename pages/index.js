@@ -6,7 +6,6 @@ import Results from "../components/Results";
 import requests from "../utils/requests";
 
 export default function Home({ results }) {
-  console.log(results);
   return (
     <div>
       <Head>
@@ -26,10 +25,10 @@ export default function Home({ results }) {
 }
 export async function getServerSideProps(context) {
   const genre = context.query.genre;
-  console.log(genre);
+  console.log(context);
   const request = await fetch(
     `https://api.themoviedb.org/3${
-      requests[genre]?.url || requests.fetchTrending.fetchURL
+      requests[genre]?.url || requests.fetchTrending.url
     }`
   );
   const response = await request.json();
